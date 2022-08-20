@@ -25,5 +25,5 @@ InitManager.initCore(app) // 初始化框架
 // 导入模块
 // require('./app/models/user') // 用户数据库模型
 
-// 启动koa框架
+// 启动koa框架feature~
 app.listen(5100)
