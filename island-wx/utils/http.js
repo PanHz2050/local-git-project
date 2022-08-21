@@ -22,7 +22,6 @@ class Http {
 			header: {
 				'content-type': 'application/json',
 				// appkey: config.appkey,
-				// Authorization: `Basic${this._encode()}`
 				Authorization: `Basic ${this._encode()}`
 			},
 			success: res => {
