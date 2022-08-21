@@ -7,7 +7,7 @@
  */
 const jwt = require('jsonwebtoken') // 令牌
 /***
- * 
+ *
  */
 const findMembers = function (instance, {
     prefix,
@@ -59,7 +59,7 @@ const generateToken = function (uid, scope) {
     const token = jwt.sign({
         uid,
         scope
-    }, secretKey, { 
+    }, secretKey, {
         expiresIn
     })
     return token

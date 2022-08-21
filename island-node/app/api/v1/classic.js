@@ -26,7 +26,7 @@ router.get('/latestNoMusic', new Auth(APIAccess.USER).m, async (ctx) => {
   // (Movie, Sentence表数据)
   const art = await Art.getData(flow.artId, flow.type)
   // 判断当前用户是否点赞该期刊
-  const isLike = await Favor.userLikeIt(flow.artId, flow.type, ctx.auth.uid) 
+  const isLike = await Favor.userLikeIt(flow.artId, flow.type, ctx.auth.uid)
   // art.dataValues.index = flow.index // 给art.dataValues添加 index属性
   art.setDataValue('index', flow.index) // 给art.dataValues添加 index属性
   art.setDataValue('likeStatus', isLike)
@@ -48,10 +48,10 @@ router.get('/latest', new Auth(APIAccess.USER).m, async (ctx) => {
   // (Movie, Music, Sentence表数据)
   const art = await Art.getData(flow.artId, flow.type)
   // 判断当前用户是否点赞该期刊
-  const isLike = await Favor.userLikeIt(flow.artId, flow.type, ctx.auth.uid) 
-  // art.dataValues.index = flow.index // 给art.dataValues添加 index属性
-  art.setDataValue('index', flow.index) // 给art.dataValues添加 index属性
-  art.setDataValue('likeStatus', isLike)
+  // const isLike = await Favor.userLikeIt(flow.artId, flow.type, ctx.auth.uid)
+  // // art.dataValues.index = flow.index // 给art.dataValues添加 index属性
+  // art.setDataValue('index', flow.index) // 给art.dataValues添加 index属性
+  // art.setDataValue('likeStatus', isLike)
   // 最终返回 art.dataValues内的JSON数据
   ctx.body = {
     art
