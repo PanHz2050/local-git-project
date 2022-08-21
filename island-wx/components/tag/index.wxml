@@ -1,0 +1,9 @@
+<!--components/tag/index.wxml-->
+<!-- <view class="container tag-class {{toggleColor?blue:red}}" bindtap="onTap"> -->
+<view class="container tag-class" bindtap="onTap">
+  <text>{{text}}</text>
+  <!-- slot插槽,如果需要显示text,组件外部传递text进来,使用调用方来决定是否使用插槽 -->
+  <slot name="after"></slot>
+</view>
+
+<!-- 通过外部样式 覆盖普通样式 -->

@@ -1,0 +1,18 @@
+<!--components/classic/movie/index.wxml-->
+<view hidden="{{hidden}}" class="container">
+  <image class="img" src="{{img}}"></image>
+  <image class="tag" src="images/movie@tag.png"></image>
+  <!-- <text class="classic-text">{{content}}</text> -->
+  <text class="content contentMovie">{{content}}</text>
+</view>
+
+<!-- 如果content有内容则加一个句号 -->
+<wxs module="util">
+  var Splicing = function (val) {
+    if (!val) {
+      return
+    }
+    return val.concat('。')
+  }
+  module.exports.Splicing = Splicing
+</wxs>
