@@ -1,0 +1,23 @@
+<!--components/episode/index.wxml-->
+
+<view class="container">
+  <view class="container-left">
+    <text class="orderNo">No.</text>
+    <text class="index">{{_index}}</text>
+    <view class="verticalLine"></view>
+  </view>
+  <view class="date-container">
+    <text class="month">{{month}}</text>
+    <text class="year">{{year}}</text>
+  </view>
+</view> 
+
+<!-- <wxs module="util">
+  var sub = function (val) {
+    if (!val) {
+      return
+    }
+    return val.substring(0, 4)
+  }
+  module.exports.sub = sub
+</wxs> -->

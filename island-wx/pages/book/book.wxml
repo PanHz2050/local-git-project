@@ -1,0 +1,23 @@
+<!-- pages/popular/popular.wxml -->
+<view wx:if="{{!searching}}" class="container">
+  <!-- 顶部搜索框 -->
+  <view class="header">
+    <view class="box" bindtap="onSearching">
+      <image src="/images/icon/search.png"></image>
+      <text>搜索书籍</text>
+    </view>
+  </view>
+  <view class="sub-container">
+    <!-- 精选 -->
+    <image class="head-img" src="/images/book/quality.png" />
+    <!-- 书籍列表渲染 -->
+    <view class="books-container">
+      <block wx:key="id" wx:for="{{books}}">
+        <v-book book="{{item}}"/>
+      </block>
+    </view>
+  </view>
+</view>
+
+<!-- 搜索功能组件 more加载更多 监听是否触底 -->
+<v-search more="{{more}}" bind:cancel="onCancel" wx:if="{{searching}}" />  

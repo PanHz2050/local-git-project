@@ -1,0 +1,10 @@
+<!-- components/classic/music/index.wxml -->
+<view class="container" hidden="{{hidden}}">
+  <!-- 播放封面图 通过playing(Boolean)来控制css旋转动画 -->
+  <image class="classic-img {{playing?'rotation':''}}" src="{{img}}" />
+  <!-- 播放or暂停 -->
+  <image class="classic-img player-img" bindtap="onPlay" src="{{!playing?playSrc:pauseSrc}}" />
+  <!-- 左边音乐tag -->
+  <image class="tag" src="images/music@tag.png" />
+  <text class="content contentMusic">{{content}}</text>
+</view>
