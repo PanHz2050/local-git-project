@@ -1,7 +1,7 @@
 // Promise改写Http
 import { config } from '../config.js'
 import { Token } from '../models/token'
-import { Base64 } from '../utils/base64'
+import { Base64 } from 'js-base64'
 
 const tips = {
 	1: '抱歉, 出现了一个错误',
@@ -29,8 +29,8 @@ class Http {
 			data: data,
 			header: {
 				'content-type': 'application/json',
-				appkey: config.appkey,
-				Authorization: this._encode()
+				// appkey: config.appkey,
+				Authorization: `Basic ${this._encode()}`
 			},
 			success: res => {
 				const code = res.statusCode.toString()
@@ -56,7 +56,7 @@ class Http {
 		const token = wx.getStorageSync('token')
 		const result = Base64.encode(token + ':')
 		// console.log(result)
-		return 'Basic' + result
+		return result
 	}
 
 	_refetch(...param) {

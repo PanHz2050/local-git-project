@@ -1,6 +1,6 @@
 import { config } from '../config.js'
-import { Base64 } from '../utils/base64'
 import { Token } from '../models/token'
+import { Base64 } from 'js-base64'
 
 const tips = {
 	1: '抱歉, 出现了一个错误',
@@ -22,8 +22,8 @@ class Http {
 			header: {
 				'content-type': 'application/json',
 				// appkey: config.appkey,
-				Authorization: this._encode()
-				// authorization: `Bearer ${this._encode()}`
+				// Authorization: `Basic${this._encode()}`
+				Authorization: `Basic ${this._encode()}`
 			},
 			success: res => {
 				let code = res.statusCode.toString()
@@ -47,11 +47,9 @@ class Http {
 
 	_encode() {
 		const token = wx.getStorageSync('token')
-		// const result = Base64.encode(token + ':')
-		const result = Base64.encode(token)
+		const result = Base64.encode(token + ':')
 		// console.log('result1231', result)
-		return 'Basic ' + result
-		// return token
+		return result
 	}
 
 	_refetch(...param) {
