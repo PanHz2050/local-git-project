@@ -23,10 +23,8 @@ module.exports = {
 	},
 	// 微信登陆 - 微信服务提供
 	wx: {
-		// appID: 'wxcae4528862a54e99',
-		// appSecret: '7d07469e97be0ae254e68adc9fbf58fd',
-		appID: 'wx903cfb5ebb20f60d', //葡萄不酸
-		appSecret: '342b333cd3ec6ddba81d23c1d834b02f', // 葡萄不酸
+		appID: 'wx903cfb5ebb20f60d', // 你的小程序appID
+		appSecret: '342b333cd3ec6ddba81d23c1d834b02f', // 你的小程序appSecret
 		loginUrl:
 			'https://api.weixin.qq.com/sns/jscode2session?appid=%s&secret=%s&js_code=%s&grant_type=authorization_code' // 登陆微信小程序url
 	},

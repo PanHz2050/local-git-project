@@ -1,5 +1,5 @@
 import { Token } from './models/token'
-// app.js
+// app.js feature~
 App({
 	onLaunch() {
 		// 展示本地存储能力
