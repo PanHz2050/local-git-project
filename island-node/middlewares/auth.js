@@ -18,10 +18,11 @@ class Auth {
   get m() {
     return async (ctx, next) => {
       // 获取用户Token
-      const userToken = basicAuth(ctx.req) // ctx.req: koa封装的 node.js request
+      const userToken = await basicAuth(ctx.req) // ctx.req: koa封装的 node.js request
+      console.log('userToken12312', userToken) // undefined
       // userToken不存在，拒绝访问
       if(!userToken || !userToken.name) {
-        throw new Forbbiden()
+        throw new Forbbiden('userToken不存在，拒绝访问~12312321')
       }
       try {
         // 返回携带的参数 uid, scope
