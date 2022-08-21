@@ -8,6 +8,9 @@
 npm install
 node app.js
 pm2 start app.js
+
+sql2下的sql不用管。
+
 ```
 #### 项目tree
 ```
