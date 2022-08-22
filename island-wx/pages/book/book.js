@@ -21,8 +21,9 @@ Page({
 		// Promise方式处理调用接口返回的数据
 		const book = bookModel.getHotList()
 		book.then((res) => {
+			console.log(res)
 			this.setData({
-				books: res
+				books: res.hotBooks
 			})
 		})
 

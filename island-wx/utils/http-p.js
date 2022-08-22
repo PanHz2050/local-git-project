@@ -29,7 +29,7 @@ class Http {
 			data: data,
 			header: {
 				'content-type': 'application/json',
-				// appkey: config.appkey,
+				appkey: config.appkey,
 				Authorization: `Basic ${this._encode()}`
 			},
 			success: res => {

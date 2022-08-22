@@ -34,6 +34,6 @@ module.exports = {
 		keywordUrl:
 			'http://t.yushu.im/v2/book/search?q=%s&count=%s&start=%s&summary=%s' // 搜索书籍
 	},
-	host: 'http://localhost:3000/'
+	host: 'http://localhost:5100/'
 	// host: 'https://www.sqhldh.xyz/'
 }

@@ -20,7 +20,7 @@ class Auth {
       // console.log('ctx.req12312', ctx.req)
       // 获取用户Token
       let userToken = basicAuth(ctx.req) // ctx.req: koa封装的 node.js request
-      // console.log('userToken12312', userToken) // undefined
+      // console.log('userToken12312', userToken) // ok
       // userToken不存在，拒绝访问
       if(!userToken || !userToken.name) {
         throw new Forbbiden('userToken不存在，拒绝访问~12312321')

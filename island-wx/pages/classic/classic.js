@@ -51,10 +51,10 @@ Component({
 			const behavior = e.detail.behavior
 			likeModel.like(
 				behavior,
-				this.data.classicData.id,
-				this.data.classicData.type
+				this.data.classicData.art.id,
+				this.data.classicData.art.type,
 			)
-			// console.log(this.data.classicData.id, this.data.classicData.type);
+			// console.log(this.data.classicData.art.id, this.data.classicData.type);
 		},
 
 	 onNext(e) {
@@ -63,21 +63,10 @@ Component({
 
 		onPrevious(e) {
 			this._updataClassic('previous')
-
-			// index 为当前期刊
-			// let index = this.data.classicData.index
-			// classicModel.getPrevious(index, (res) => {
-			// 	this.setData({
-			// 		classicData: res,
-			// 		latest: classicModel.isLatest(res.index),
-			// 		first: classicModel.isFirst(res.index)
-			// 	})
-			// 	console.log(res)
-			// })
 		},
 
 		_updataClassic(nextOrPrevious) {
-			const index = this.data.classicData.index
+			const index = this.data.classicData.art.index
 			classicModel.getClassic(index, nextOrPrevious, res => {
 				this._getLikeStatus(res.id, res.type)
 				this.setData({

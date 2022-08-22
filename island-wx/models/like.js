@@ -8,7 +8,7 @@ class LikeModel extends Http {
 			url: url,
 			method: 'POST',
 			data: {
-				art_id: artID,
+				artId: artID,
 				type: category
 			}
 			/* 如果这里使用回调函数会导致报错params.success is not a function || 处理 ==> params.success && params.success(res)
